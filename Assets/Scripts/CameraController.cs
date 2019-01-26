@@ -9,23 +9,23 @@ public class CameraController : MonoBehaviour
     public GameObject player;
     public PostProcessingProfile effectProfile;
     private float progress = 0f;
+
     private void Start()
     {
-        
+        var colorGradient = effectProfile.colorGrading.settings;
+        colorGradient.basic.saturation = 0f;
+        effectProfile.colorGrading.settings = colorGradient;
     }
 
     IEnumerator setSaturation(float saturation) {
         if (effectProfile.colorGrading.enabled)
         {
             var colorGradient = effectProfile.colorGrading.settings;
-
-            while (saturation!= colorGradient.basic.saturation) {    
+            while (saturation >= colorGradient.basic.saturation) {    
                 colorGradient.basic.saturation += 0.01f;
                 effectProfile.colorGrading.settings = colorGradient;
-                yield return new WaitForSeconds(0.5f);
-            }
-
-               
+                yield return new WaitForSeconds(0.1f);
+            }  
         }
         //Debug.Log("Saturation:" + saturation);
         

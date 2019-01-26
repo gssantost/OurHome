@@ -30,13 +30,20 @@ public class Player : MonoBehaviour
         {
             if (trigger)
             {
-                if (another.CompareTag("Primary")) {
+                if (another.CompareTag("Primary"))
+                {
                     Debug.Log("Primary");
                     objetive.completeObjetive();
-                } else if (another.CompareTag("Secondary")) {
+                }
+                else if (another.CompareTag("Secondary"))
+                {
                     Debug.Log("Secondary");
                     inventory.add(another.gameObject);
                     Destroy(another.gameObject);
+                }
+                else if (another.CompareTag("NPC")) {
+                    Debug.Log("NPC");
+                    another.gameObject.GetComponent<Interactive>().Interaction();
                 }
             }
         }
