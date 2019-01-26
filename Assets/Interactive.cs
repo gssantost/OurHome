@@ -6,6 +6,8 @@ public class Interactive : MonoBehaviour
 {
     private GameObject canvas;
     public GameObject message;
+    private GameObject auxMessage;
+    public string text;
 
     private void Awake()
     {
@@ -14,7 +16,15 @@ public class Interactive : MonoBehaviour
 
     public void Interaction() {
         Time.timeScale = 0f;
+        //Inventario oculta
         this.canvas.transform.GetChild(0).gameObject.SetActive(false);
-        Instantiate(message, canvas.transform);
+        auxMessage = Instantiate(message, canvas.transform);
+        auxMessage.GetComponent<Message>().setGrandparent(this.gameObject);
+    }
+
+    public void finishMessage() {
+        Time.timeScale = 1f;
+        Destroy(auxMessage);
+        this.canvas.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

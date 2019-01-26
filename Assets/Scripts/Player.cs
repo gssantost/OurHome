@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     private bool trigger = false;
     public Collider2D another;
     public Inventory inventory;
-    public Objetive objetive;
+
+    private int objetiveComplete = 0;
+    private int objetiveMax = 1;
 
     private void Awake()
     {
@@ -33,7 +35,8 @@ public class Player : MonoBehaviour
                 if (another.CompareTag("Primary"))
                 {
                     Debug.Log("Primary");
-                    objetive.completeObjetive();
+                    completeObjetive();
+                    another.gameObject.GetComponent<Interactive>().Interaction();
                 }
                 else if (another.CompareTag("Secondary"))
                 {
@@ -51,15 +54,10 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        
         Vector3 axisInput = new Vector3(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
-
         animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Vertical",Input.GetAxisRaw("Vertical"));
         transform.position = Vector2.MoveTowards(transform.position, axisInput+transform.position, Time.deltaTime * speed);
-
-
-
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -69,7 +67,11 @@ public class Player : MonoBehaviour
     }
 
     public float getPercentage() {
-        return objetive.getStatus();
+        return objetiveComplete / objetiveMax;
+    }
+
+    public void completeObjetive() {
+        this.objetiveComplete++;
     }
 
 }

@@ -41,3 +41,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Grama
+    uniqueID: 3556241199
+    locked: 0
+  - name: Arena
+    uniqueID: 348941157
+    locked: 0
+  - name: Cesped
+    uniqueID: 1940580311
+    locked: 0
+  - name: Lago
+    uniqueID: 4091346405
+    locked: 0
+  - name: Huecos
+    uniqueID: 719536383
+    locked: 0
+  - name: Rocas
+    uniqueID: 1835300643
+    locked: 0
+  - name: Islas
+    uniqueID: 4236636081
+    locked: 0
+  - name: Objetos
+    uniqueID: 2945507487
+    locked: 0
+  - name: Arboles
+    uniqueID: 3053989069
+    locked: 0
+  - name: Arboles 2
+    uniqueID: 3414900545
+    locked: 0
+  - name: Player
+    uniqueID: 890118703
+    locked: 0
