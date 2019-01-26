@@ -207,7 +207,7 @@ public class AutoType : MonoBehaviour {
                 getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("cake"); });
                 break;
             case States.end:
-                setChoice(choiceA, "¿Lo intentarás?");
+                setChoice(choiceA, "Sí");
                 getChoiceButton(choiceA).onClick.AddListener(changeScene);
                 for (int i = 1; i < PlayerPrefs.GetInt("length"); i++) {
                     Debug.Log(PlayerPrefs.GetString(i.ToString()));
