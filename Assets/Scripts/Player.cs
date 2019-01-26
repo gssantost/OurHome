@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [Range(1, 20)]
     public int speed = 5;
     private Animator animator;
+    private bool trigger = false;
+    public Collider2D another;
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -22,6 +25,19 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (trigger)
+            {
+                if (another.CompareTag("Primary")) {
+                    Debug.Log("Primary");
+                } else if (another.CompareTag("Secondary")) {
+                    Debug.Log("Secondary");
+                    inventory.add(another.gameObject);
+                    Destroy(another.gameObject);
+                }
+            }
+        }
     }
 
     private void Movement()
@@ -37,5 +53,10 @@ public class Player : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        trigger = true;
+        another = other;
+    }
 
 }
