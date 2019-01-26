@@ -1,20 +1,23 @@
 fileFormatVersion: 2
-guid: 68898f5f80a07964b8888909c188fa0e
+guid: c6dc6bddff3defa4da5948d09b55abe4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Avatar_0
-    21300002: Avatar_1
-    21300004: Avatar_2
-    21300006: Avatar_3
-    21300008: Avatar_4
-    21300010: Avatar_5
-    21300012: Avatar_6
-    21300014: Avatar_7
-    21300016: Avatar_8
-    21300018: Avatar_9
-    21300020: Avatar_10
-    21300022: Avatar_11
-    2186277476908879412: ImportLogs
+    21300000: bridges_0
+    21300002: bridges_1
+    21300004: bridges_2
+    21300006: bridges_3
+    21300008: bridges_4
+    21300010: bridges_5
+    21300012: bridges_6
+    21300014: bridges_7
+    21300016: bridges_8
+    21300018: bridges_9
+    21300020: bridges_10
+    21300022: bridges_11
+    21300024: bridges_12
+    21300026: bridges_13
+    21300028: bridges_14
+    21300030: bridges_15
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -44,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -97,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Avatar_0
+      name: bridges_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 156
-        width: 25
-        height: 47
+        x: 0
+        y: 179
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,19 +114,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5983bfb5152e9643998e9e61c0ee180
+      spriteID: 576ba7bbbe4a441429c6f2738c6cbc5c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_1
+      name: bridges_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 156
-        width: 25
-        height: 49
+        x: 48
+        y: 179
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,19 +134,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2ee1c79cb807949a1e13cce5f77869
+      spriteID: b9fb8ba7e36c04e4a8eaa396c128c819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_2
+      name: bridges_2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 156
-        width: 25
-        height: 47
+        x: 96
+        y: 179
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,19 +154,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 863f8107a0ac1be4a8183ec7556160e0
+      spriteID: b8fba4aca0f290541b5f65758d848e71
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_3
+      name: bridges_3
       rect:
         serializedVersion: 2
-        x: 9
-        y: 104
-        width: 24
-        height: 49
+        x: 144
+        y: 179
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,19 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b5e4a5dcf185d24c95c7ebaff9e52f9
+      spriteID: 26d768a699f35f64a8f518bff5133301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_4
+      name: bridges_4
       rect:
         serializedVersion: 2
-        x: 59
-        y: 104
-        width: 24
-        height: 50
+        x: 0
+        y: 134
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,19 +194,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62dbe1065a27d3b4d92478b2fca97b0e
+      spriteID: 71e7189e3667fdc43b16a34bb9207ba6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_5
+      name: bridges_5
       rect:
         serializedVersion: 2
-        x: 105
-        y: 104
-        width: 24
-        height: 49
+        x: 48
+        y: 134
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,19 +214,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13e1ad2613d51f64d8e9a0189b755efd
+      spriteID: 4cc710b7a0b13c4489b581f168efcd3e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_6
+      name: bridges_6
       rect:
         serializedVersion: 2
-        x: 13
-        y: 52
-        width: 24
-        height: 49
+        x: 96
+        y: 134
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,19 +234,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a00eff75ec0da4d46b3b6e709fee9c0d
+      spriteID: 6ec636b647224f74b8816580c8e3e0fd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_7
+      name: bridges_7
       rect:
         serializedVersion: 2
-        x: 59
-        y: 52
-        width: 24
-        height: 50
+        x: 144
+        y: 134
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,19 +254,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccd1472e9e25340429f5f2319a56cdfc
+      spriteID: 3d053ae1e9ca1794bb5c859fa6b9769b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_8
+      name: bridges_8
       rect:
         serializedVersion: 2
-        x: 109
-        y: 52
-        width: 24
-        height: 49
+        x: 0
+        y: 89
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,19 +274,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7cffc15abee9424aa930f2276cbd597
+      spriteID: db63798b04f884849aa156276091d3fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_9
+      name: bridges_9
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 25
-        height: 48
+        x: 48
+        y: 89
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,19 +294,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78e5649e9ce0e0d4aac611edc63a3ded
+      spriteID: 004f45d4be8805c4e89ef9ff85b6c855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_10
+      name: bridges_10
       rect:
         serializedVersion: 2
-        x: 59
-        y: 0
-        width: 25
-        height: 49
+        x: 96
+        y: 89
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,19 +314,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9748c57bc4eb8d4e8b85f6229964cb5
+      spriteID: 738970fb04daf7049843a0c41e18a852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Avatar_11
+      name: bridges_11
       rect:
         serializedVersion: 2
-        x: 107
-        y: 0
-        width: 25
-        height: 48
+        x: 144
+        y: 89
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,7 +334,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7639c22f23647bd4cbcda1b1213dc30a
+      spriteID: 83c1467fdb36cfc4b8e66a6a061f2284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridges_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cde402c029682146950b545966efc2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridges_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 44
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298d0d52fc04cb7429d6933aab3e62aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridges_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 44
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a55b850dc8c6b4baa81d01c38c68c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridges_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 44
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986ea1e2628d65245bc161e61d9c2c09
       vertices: []
       indices: 
       edges: []
@@ -339,7 +422,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5f2f9363bd822bc42ae68b9525260571
+    spriteID: b558274b29f4e684cb9283090e1d1b3c
     vertices: []
     indices: 
     edges: []
