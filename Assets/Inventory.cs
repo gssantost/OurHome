@@ -45,6 +45,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+
     private void desactivedAll(int key)
     {
         
@@ -54,6 +55,16 @@ public class Inventory : MonoBehaviour
             if (panel.id != key)
             {
                 panel.desactivated(); 
+            }
+        }
+    }
+
+    public void add(GameObject item) {
+
+        foreach (Panel panel in listPanel) {
+            if (panel.item.sprite == null) {
+                panel.addItem(item);
+                break;
             }
         }
     }

@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     [Range(1, 20)]
     public int speed = 5;
     private Animator animator;
+    private bool trigger = false;
+    public Collider2D another;
+    public Inventory inventory;
+    public Objetive objetive;
 
     private void Awake()
     {
@@ -22,6 +26,27 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (trigger)
+            {
+                if (another.CompareTag("Primary"))
+                {
+                    Debug.Log("Primary");
+                    objetive.completeObjetive();
+                }
+                else if (another.CompareTag("Secondary"))
+                {
+                    Debug.Log("Secondary");
+                    inventory.add(another.gameObject);
+                    Destroy(another.gameObject);
+                }
+                else if (another.CompareTag("NPC")) {
+                    Debug.Log("NPC");
+                    another.gameObject.GetComponent<Interactive>().Interaction();
+                }
+            }
+        }
     }
 
     private void Movement()
@@ -37,5 +62,14 @@ public class Player : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        trigger = true;
+        another = other;
+    }
+
+    public float getPercentage() {
+        return objetive.getStatus();
+    }
 
 }
