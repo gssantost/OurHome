@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool trigger = false;
     public Collider2D another;
     public Inventory inventory;
+    public Objetive objetive;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
             {
                 if (another.CompareTag("Primary")) {
                     Debug.Log("Primary");
+                    objetive.completeObjetive();
                 } else if (another.CompareTag("Secondary")) {
                     Debug.Log("Secondary");
                     inventory.add(another.gameObject);
@@ -57,6 +59,10 @@ public class Player : MonoBehaviour
     {
         trigger = true;
         another = other;
+    }
+
+    public float getPercentage() {
+        return objetive.getStatus();
     }
 
 }
