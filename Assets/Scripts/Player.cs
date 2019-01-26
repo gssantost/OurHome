@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [Range(3, 20)]
+    [Range(1, 20)]
     public int speed = 5;
     private Animator animator;
 
