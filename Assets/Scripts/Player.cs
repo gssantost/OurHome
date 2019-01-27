@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public Collider2D another;
     public Inventory inventory;
 
-    private int objetiveComplete = 0;
+    private float objetiveComplete = 0f;
     private int objetiveMax = 1;
 
     private void Awake()
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
                     Debug.Log("Primary");
                     completeObjetive();
                     another.gameObject.GetComponent<Interactive>().Interaction();
+                    another.gameObject.SetActive(false);
                 }
                 else if (another.CompareTag("Secondary"))
                 {
@@ -47,17 +48,23 @@ public class Player : MonoBehaviour
                 else if (another.CompareTag("NPC")) {
                     Debug.Log("NPC");
                     another.gameObject.GetComponent<Interactive>().Interaction();
+                } else if (another.CompareTag("Event")) {
+                    Debug.Log("Event");
+                    another.gameObject.GetComponent<EventInteraction>().Interaction();
+
                 }
+                another = null;
             }
         }
     }
 
     private void Movement()
     {
-        Vector3 axisInput = new Vector3(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Vector2 axisInput = new Vector2((int)Input.GetAxisRaw("Horizontal"), (int)Input.GetAxisRaw("Vertical"));
         animator.SetFloat("Horizontal",Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Vertical",Input.GetAxisRaw("Vertical"));
-        transform.position = Vector2.MoveTowards(transform.position, axisInput+transform.position, Time.deltaTime * speed);
+        rb.velocity = axisInput * speed;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -66,8 +73,14 @@ public class Player : MonoBehaviour
         another = other;
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        trigger = false;
+        another = null;
+    }
+
     public float getPercentage() {
-        return objetiveComplete / objetiveMax;
+        return objetiveComplete / (float) PlayerPrefs.GetInt("length");
     }
 
     public void completeObjetive() {

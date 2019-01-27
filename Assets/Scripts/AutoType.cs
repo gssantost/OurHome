@@ -209,7 +209,6 @@ public class AutoType : MonoBehaviour {
                 getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("cake"); });
                 break;
             case States.end:
-                StartCoroutine(musicPlayer.FadeOut(0.8f));
                 setChoice(choiceA, "Sí");
                 getChoiceButton(choiceA).onClick.AddListener(changeScene);
                 choiceB.SetActive(false);

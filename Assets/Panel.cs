@@ -9,6 +9,7 @@ public class Panel : MonoBehaviour
     public bool active;
     public int id;
     public Image item;
+    public String itemName;
 
     public void Start()
     {
@@ -25,10 +26,18 @@ public class Panel : MonoBehaviour
         this.GetComponent<Image>().color = Color.white;
     }
 
+    public void clearPanel() {
+        this.itemName = null;
+        this.item.sprite = null;
+        this.item.color = Color.white;
+
+    }
+
     public void addItem(GameObject item)
     {
         Debug.Log("Tuqui tuqui");
         this.item.sprite = item.GetComponent<SpriteRenderer>().sprite;
         this.item.color = Color.white;
+        this.itemName = item.GetComponent<Item>().getItemName();
     }
 }
