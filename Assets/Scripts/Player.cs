@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public Collider2D another;
     public Inventory inventory;
 
+    public GameObject emoji;
+
     private float objetiveComplete = 0f;
     private int objetiveMax = 1;
 
@@ -32,12 +34,12 @@ public class Player : MonoBehaviour
         {
             if (trigger)
             {
-                if (another.CompareTag("Primary"))
-                {
+                if (another.CompareTag("Primary")){
                     Debug.Log("Primary");
                     completeObjetive();
                     another.gameObject.GetComponent<Interactive>().Interaction();
                     another.gameObject.SetActive(false);
+                    emoji.SetActive(false);
                 }
                 else if (another.CompareTag("Secondary"))
                 {
@@ -51,7 +53,9 @@ public class Player : MonoBehaviour
                 } else if (another.CompareTag("Event")) {
                     Debug.Log("Event");
                     another.gameObject.GetComponent<EventInteraction>().Interaction();
+                } else if (another.CompareTag("Final")){
 
+                    another.gameObject.GetComponent<FinalEvent>().Interaction();
                 }
                 another = null;
             }
@@ -71,20 +75,24 @@ public class Player : MonoBehaviour
     {
         trigger = true;
         another = other;
+        emoji.SetActive(true);
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         trigger = false;
         another = null;
+        emoji.SetActive(false);
     }
 
     public float getPercentage() {
-        return objetiveComplete / (float) PlayerPrefs.GetInt("length");
+        return objetiveComplete / (float) (PlayerPrefs.GetInt("length")+1);
     }
 
     public void completeObjetive() {
-        this.objetiveComplete++;
+        //if (objetiveMax < objetiveComplete+1) {
+            objetiveComplete++;
+        //}
     }
 
 }

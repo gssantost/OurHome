@@ -19,7 +19,7 @@ public class Interactive : MonoBehaviour
     public void Interaction() {
         Time.timeScale = 0f;
         //Inventario oculta
-        this.canvas.transform.GetChild(0).gameObject.SetActive(false);
+        //this.canvas.transform.GetChild(0).gameObject.SetActive(false);
         auxMessage = Instantiate(message, canvas.transform);
         auxMessage.GetComponent<Message>().setGrandparent(this.gameObject);
         auxMessage.GetComponent<Message>().setText(text);

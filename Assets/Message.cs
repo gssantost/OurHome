@@ -5,18 +5,23 @@ using UnityEngine.UI;
 
 public class Message : MonoBehaviour
 {
-    GameObject grandparent; 
+    GameObject grandparent;
 
-    public void actionMessage() {
-
-        if (grandparent.GetComponent<Interactive>() != null){
+    public void actionMessage()
+    {
+        if (grandparent.GetComponent<Interactive>() != null)
+        {
             grandparent.GetComponent<Interactive>().finishMessage();
-        } else if(grandparent.GetComponent<EventInteraction>() != null){
+        }
+        else if (grandparent.GetComponent<EventInteraction>() != null)
+        {
             grandparent.GetComponent<EventInteraction>().finishMessage();
         }
-
+        else if (grandparent.GetComponent<FinalEvent>() != null)
+        {
+            grandparent.GetComponent<FinalEvent>().finishMessage();
+        }
     }
-
 
     public void setGrandparent(GameObject grandparent) {
         this.grandparent = grandparent;

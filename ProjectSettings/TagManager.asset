@@ -8,6 +8,7 @@ TagManager:
   - Primary
   - Secondary
   - NPC
+  - Final
   layers:
   - Default
   - TransparentFX
@@ -80,4 +81,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 890118703
+    locked: 0
+  - name: Arboles 3
+    uniqueID: 1506205605
     locked: 0

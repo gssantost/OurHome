@@ -16,7 +16,7 @@ public class TextController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        message = readString("finale");
+        message = "N U E S T R O   H O G A R   comienza a tejerse desde el momento en el nacemos, de la mano de tu familia. Seres queridos vendrán de todas partes. Emociones, sentimientos y demás, uno tras otro, se van transformando en lo que tu definirás como hogar.\nAquí y en todo momento, tras tormentas o separaciones, serás capaz de crearlo.";
         StartCoroutine(TypeText());
     }
 
