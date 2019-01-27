@@ -15,6 +15,11 @@ public class CameraController : MonoBehaviour
         var colorGradient = effectProfile.colorGrading.settings;
         colorGradient.basic.saturation = 0f;
         effectProfile.colorGrading.settings = colorGradient;
+        Debug.Log("length Pref " + PlayerPrefs.GetInt("length"));
+        for (int i = 0; i <= PlayerPrefs.GetInt("length"); i++)
+        {
+            Debug.Log(PlayerPrefs.GetString(i.ToString()));
+        }
     }
 
     IEnumerator setSaturation(float saturation) {

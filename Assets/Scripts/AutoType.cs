@@ -13,12 +13,14 @@ public class AutoType : MonoBehaviour {
 
     private string message;
     private string textFragment;
-    private int counter = 1;
+    private int counter = 0;
 
     public GameObject optionsMenu;
     public GameObject choiceA;
     public GameObject choiceB;
     public GameObject choiceC;
+
+    public MusicPlayer musicPlayer;
    
     private enum States {
         beginning, garden, pet, feeling, room, store, park, end
@@ -27,11 +29,12 @@ public class AutoType : MonoBehaviour {
     private States currentState;
 
     void Start() {
+        PlayerPrefs.DeleteAll();
         beginning();
     }
 
     private void setChoice(GameObject obj, string text) {
-        obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+        obj.transform.GetChild(0).GetComponent<Text>().text = text;
     }
 
     private Button getChoiceButton(GameObject obj) {
@@ -110,15 +113,14 @@ public class AutoType : MonoBehaviour {
         toggleChoices(false);
         currentState = States.end;
         message = readString("end");
-        PlayerPrefs.SetInt("length", counter);
-        Debug.Log("length Pref " + PlayerPrefs.GetInt("length"));
         type();
     }
 
     void setPreference(string key) {
-        PlayerPrefs.SetString(counter.ToString(), key);
-        counter++;
         Debug.Log(counter);
+        PlayerPrefs.SetString(counter.ToString(), key);
+        PlayerPrefs.SetInt("length", counter);
+        counter++;
     }
 
     void changeScene() {
@@ -153,8 +155,8 @@ public class AutoType : MonoBehaviour {
                 break;
             case States.room:
                 setChoice(choiceA, "Tu primer mando de consola");
-                getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("gamepad"); });
                 getChoiceButton(choiceA).onClick.AddListener(end);
+                getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("gamepad"); });
                 setChoice(choiceB, "Tu viejo bate de béisbol");
                 getChoiceButton(choiceB).onClick.AddListener(park);
                 getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("baseball"); });
@@ -175,14 +177,14 @@ public class AutoType : MonoBehaviour {
                 break;
             case States.park:
                 setChoice(choiceA, "La luna");
-                getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("moon"); });
                 getChoiceButton(choiceA).onClick.AddListener(end);
+                getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("moon"); });
                 setChoice(choiceB, "El sol");
-                getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("sun"); });
                 getChoiceButton(choiceB).onClick.AddListener(end);
+                getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("sun"); });
                 setChoice(choiceC, "Muchas estrellas");
-                getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("stars"); });
                 getChoiceButton(choiceC).onClick.AddListener(end);
+                getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("stars"); });
                 break;
             case States.feeling:
                 setChoice(choiceA, "¿Alegría?");
@@ -207,15 +209,14 @@ public class AutoType : MonoBehaviour {
                 getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("cake"); });
                 break;
             case States.end:
+                StartCoroutine(musicPlayer.FadeOut(0.8f));
                 setChoice(choiceA, "Sí");
                 getChoiceButton(choiceA).onClick.AddListener(changeScene);
-                for (int i = 1; i < PlayerPrefs.GetInt("length"); i++) {
-                    Debug.Log(PlayerPrefs.GetString(i.ToString()));
-                }
                 choiceB.SetActive(false);
                 choiceC.SetActive(false);
                 break;
         }
+        
         displayText.text = "";
         StartCoroutine(TypeText());
     }
