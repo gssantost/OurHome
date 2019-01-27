@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: {fileID: 2236006604613413883, guid: b4a10c6f09f39bb458c3d5398f8cdb20, type: 3}
-  text: 
+  text: "Mi viejo amigo Dock era muy travieso pero fiel. Conservar\xE9 a este nuevo
+    cachorro."
 --- !u!114 &6458602223935904824
 MonoBehaviour:
   m_ObjectHideFlags: 0

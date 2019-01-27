@@ -40,7 +40,9 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float percentage = player.GetComponent<Player>().getPercentage();
-        Debug.Log(percentage);
+
+        Debug.Log("Porcentaje" + percentage);
+        Debug.Log("Progress " + progress);
         if (progress<percentage) {
             progress = percentage;
             StartCoroutine(setSaturation(percentage));

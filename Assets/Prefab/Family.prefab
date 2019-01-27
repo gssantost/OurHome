@@ -95,8 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: {fileID: 2236006604613413883, guid: b4a10c6f09f39bb458c3d5398f8cdb20, type: 3}
-  text: Hace mucho tiempo que no veia una de estas... Me recuerda tanto a ella. Creo
-    que me la llevare.
+  text: "\xA1Son ellos! Sus rostros han vuelto a m\xED al ver esta fotograf\xEDa."
 --- !u!114 &6458602223935904824
 MonoBehaviour:
   m_ObjectHideFlags: 0

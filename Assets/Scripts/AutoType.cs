@@ -171,7 +171,7 @@ public class AutoType : MonoBehaviour {
                 setChoice(choiceA, "Tu primer mando de consola");
                 getChoiceButton(choiceA).onClick.AddListener(end);
                 getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("gamepad"); });
-                setChoice(choiceB, "Tu viejo bate de béisbol");
+                setChoice(choiceB, "Tu balón de baloncesto");
                 getChoiceButton(choiceB).onClick.AddListener(park);
                 getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("basketball"); });
                 setChoice(choiceC, "Tu oso de peluche");

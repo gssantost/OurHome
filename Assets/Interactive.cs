@@ -7,6 +7,8 @@ public class Interactive : MonoBehaviour
     private GameObject canvas;
     public GameObject message;
     private GameObject auxMessage;
+
+    [TextArea]
     public string text;
 
     private void Awake()
@@ -20,6 +22,7 @@ public class Interactive : MonoBehaviour
         this.canvas.transform.GetChild(0).gameObject.SetActive(false);
         auxMessage = Instantiate(message, canvas.transform);
         auxMessage.GetComponent<Message>().setGrandparent(this.gameObject);
+        auxMessage.GetComponent<Message>().setText(text);
     }
 
     public void finishMessage() {
