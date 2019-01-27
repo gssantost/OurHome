@@ -784,6 +784,7 @@ MonoBehaviour:
   choiceA: {fileID: 668415119}
   choiceB: {fileID: 324492509}
   choiceC: {fileID: 2080887581}
+  musicPlayer: {fileID: 1236606666}
 --- !u!1 &1695625963
 GameObject:
   m_ObjectHideFlags: 0
