@@ -19,11 +19,10 @@ public class AutoType : MonoBehaviour {
     public GameObject choiceA;
     public GameObject choiceB;
     public GameObject choiceC;
-
-    public MusicPlayer musicPlayer;
+    
    
     private enum States {
-        beginning, garden, pet, feeling, room, store, park, end
+        beginning, garden, pet, feeling, room, store, park, end, areYouSure, completelySure
     }
 
     private States currentState;
@@ -115,6 +114,22 @@ public class AutoType : MonoBehaviour {
         message = readString("end");
         type();
     }
+    
+    void areYouSure()
+    {
+        toggleChoices(false);
+        currentState = States.areYouSure;
+        message = readString("areYouSure");
+        type();
+    }
+
+    void completelySure()
+    {
+        toggleChoices(false);
+        currentState = States.completelySure;
+        message = readString("completelySure");
+        type();
+    }
 
     void setPreference(string key) {
         Debug.Log(counter);
@@ -123,10 +138,9 @@ public class AutoType : MonoBehaviour {
         counter++;
     }
 
-    void changeScene() {
-        SceneManager.LoadScene("SampleScene");
+    void changeScene(string scene) {
+        SceneManager.LoadScene(scene);
     }
-    
 
     public void type() {
         removeAllListeners();
@@ -159,7 +173,7 @@ public class AutoType : MonoBehaviour {
                 getChoiceButton(choiceA).onClick.AddListener(delegate { setPreference("gamepad"); });
                 setChoice(choiceB, "Tu viejo bate de béisbol");
                 getChoiceButton(choiceB).onClick.AddListener(park);
-                getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("baseball"); });
+                getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("basketball"); });
                 setChoice(choiceC, "Tu oso de peluche");
                 getChoiceButton(choiceC).onClick.AddListener(store);
                 getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("teddy"); });
@@ -171,9 +185,9 @@ public class AutoType : MonoBehaviour {
                 setChoice(choiceB, "Gato");
                 getChoiceButton(choiceB).onClick.AddListener(park);
                 getChoiceButton(choiceB).onClick.AddListener(delegate { setPreference("cat"); });
-                setChoice(choiceC, "Camaleón");
+                setChoice(choiceC, "Pájaro");
                 getChoiceButton(choiceC).onClick.AddListener(feeling);
-                getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("alligator"); });
+                getChoiceButton(choiceC).onClick.AddListener(delegate { setPreference("bird"); });
                 break;
             case States.park:
                 setChoice(choiceA, "La luna");
@@ -210,12 +224,26 @@ public class AutoType : MonoBehaviour {
                 break;
             case States.end:
                 setChoice(choiceA, "Sí");
-                getChoiceButton(choiceA).onClick.AddListener(changeScene);
-                choiceB.SetActive(false);
+                getChoiceButton(choiceA).onClick.AddListener(delegate { changeScene("SampleScene");  });
+                setChoice(choiceB, "No");
+                getChoiceButton(choiceB).onClick.AddListener(areYouSure);
+                choiceC.SetActive(false);
+                break;
+            case States.areYouSure:
+                setChoice(choiceA, "Sí");
+                getChoiceButton(choiceA).onClick.AddListener(completelySure);
+                setChoice(choiceB, "No");
+                getChoiceButton(choiceB).onClick.AddListener(end);
+                choiceC.SetActive(false);
+                break;
+            case States.completelySure:
+                setChoice(choiceA, "Sí");
+                getChoiceButton(choiceA).onClick.AddListener(delegate { changeScene("Start Screen"); });
+                setChoice(choiceB, "No");
+                getChoiceButton(choiceB).onClick.AddListener(end);
                 choiceC.SetActive(false);
                 break;
         }
-        
         displayText.text = "";
         StartCoroutine(TypeText());
     }

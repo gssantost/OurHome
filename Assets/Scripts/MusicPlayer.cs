@@ -10,7 +10,6 @@ public class MusicPlayer : MonoBehaviour
 		Debug.Log("Music player Awake " + GetInstanceID());
 		if (instance != null) {
     		Destroy(gameObject);
-    		//print("Duplicate music player self-destructing!");
     	} else {
     		instance = this;
             DontDestroyOnLoad(gameObject);
@@ -31,10 +30,8 @@ public class MusicPlayer : MonoBehaviour
         float startVolume = audioSource.volume;
 
         Debug.Log("fadee...");
-        while (audioSource.volume > 0)
-        {
+        while (audioSource.volume > 0) {
             audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
             yield return null;
         }
 
